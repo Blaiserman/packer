@@ -6,4 +6,3 @@ output-virtualbox-iso
 *.vmdk
 *.box
 note.txt
-ubuntu-16.04-amd64
