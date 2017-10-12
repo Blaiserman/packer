@@ -8,14 +8,14 @@
     "builders": [{
         "type": "virtualbox-iso",
         "guest_os_type": "RedHat_64",
-		"disk_size" : 10000,
+		    "disk_size" : 10000,
 
         "vboxmanage": [
             ["modifyvm", "{{.Name}}", "--vram", "32"]
         ],
 
 
-        "iso_url": "http://hu.mirror.guru/centos/7/isos/x86_64/CentOS-7-x86_64-NetInstall-1708.iso",
+        "iso_url": "http://hu.mirror.guru/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1708.iso",
         "iso_checksum_url": "http://hu.mirror.guru/centos/7/isos/x86_64/sha256sum.txt",
         "iso_checksum_type": "sha256",
 
@@ -30,9 +30,10 @@
         "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S /sbin/halt -h -p",
 
         "boot_command" : [
-			"<tab>",
-			"linux net.ifnames=0 biosdevname=0 ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg",
+			      "<tab>",
+			      "linux net.ifnames=0 biosdevname=0 ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg",
             "<enter><wait>"
-        ]
+        ],
+        "format": "ova"
     }]
 }
