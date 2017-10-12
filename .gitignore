@@ -4,5 +4,6 @@ output-virtualbox-iso
 *.ova
 *.ovf
 *.vmdk
+*.box
 note.txt
-Centos7eth0vagrant
+ubuntu-16.04-amd64
